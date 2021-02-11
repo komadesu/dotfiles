@@ -219,4 +219,12 @@ alias vz='vi ~/.zshrc'
 alias -g @g='| grep'
 alias -g @l='| less'
 
+## linux command
+alias rmrf='rm -rf'
+
 ##### alias エンド #####
+
+
+##### credentials スタート #####
+source ~/.credentials.sh
+##### credentials エンド #####
