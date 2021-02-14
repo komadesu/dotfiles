@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # oh-my-zshで利用できるテーマを指定
 # ZSH_THEME="candy"
 # ZSH_THEME="fletcherm"
-ZSH_THEME="dpoggi"
+# ZSH_THEME="dpoggi"
+ZSH_THEME="michelebologna"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

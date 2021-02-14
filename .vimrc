@@ -1,57 +1,63 @@
-" https://gurutaka-log.com/vim-environment 参考スタート --------
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+" Vundle configuration https://github.com/VundleVim/Vundle.vim スタート----
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Required:
-set runtimepath+=$HOME/.vim/bundle/repos/github.com/Shougo/dein.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Required:
-if dein#load_state('$HOME/.vim/bundle')
-  call dein#begin('$HOME/.vim/bundle')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-  call dein#add('$HOME/.vim/bundle/repos/github.com/Shougo/dein.vim')
-  " 追加したいプラグインを入れていく
-  "以下２つは例
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('raphamorim/lucario')
-  call dein#add('jacoborus/tender.vim')
+" --- These are examples of how to specify plugin you want ---
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+" -- These are examples of how to specify plugin you want --
 
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+" -- Add plugins you want to use here --
+Plugin 'morhetz/gruvbox'
 
-" Required:
-filetype plugin indent on
-syntax enable
+" -- Add plugins you want to use here --
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
-"End dein Scripts-------------------------
-" https://gurutaka-log.com/vim-environment 参考エンド--------
+" Vundle configuration https://github.com/VundleVim/Vundle.vim エンド----
 
 
+" -- grvbox plugin settings スタート --
+let g:gruvbox_contrast_dark = 'hard'  " default: midium
 
-" https://qiita.com/yamatsum/items/171dd5aaf0bb8f11ec60 参考スタート------
-"色のテーマ
-colorscheme lucario
-" colorscheme tender
-
-syntax on
-" 256色
-set t_Co=256
-" truecolor
-" set termguicolors
-" 背景色
-set background=dark
-
-" https://qiita.com/yamatsum/items/171dd5aaf0bb8f11ec60 参考エンド------
-
+colorscheme gruvbox
+" -- grvbox plugin settings エンド --
 
 
 " https://qiita.com/iwaseasahi/items/0b2da68269397906c14c 参考スタート----
