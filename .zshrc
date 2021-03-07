@@ -182,54 +182,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 eval "$(rbenv init -)"
 ##### set up rbenv shell integration エンド #####
 
-
 ##### alias スタート #####
-# note: you can see all aliases set by
-# command: alias
-# There are more git aliases set by something, maybe oh-my-zsh?, other than these here.
-# alias
-
-## SSH
-alias sshk='ssh-keygen -t rsa'
-alias vsc='vi ~/.ssh/config'
-
-## Node
-alias n='node index.js'
-
-### npm
-alias ni='npm install'
-alias nu='npm uninstall'
-alias nr='npm run'
-
-### yarn
-alias ya='yarn add'
-alias yr='yarn remove'
-alias yi='yarn install'
-
-## git
-# Almost here is set by maybe oh-my-zsh default, so comment some out
-alias gs='git status'
-#alias gaa='git add'
-#alias gc-b='git checkout -b'
-#alias gc-m='git commit -m'
-#alias gp='git push'
-alias gbm='git branch -m'
-alias grsh='git reset --soft HEAD^'
-
-## zsh
-alias sz='source ~/.zshrc'
-alias vz='vi ~/.zshrc'
-
-## global alias
-# set by -g option
-alias -g @g='| grep'
-alias -g @l='| less'
-
-## linux command
-alias rmrf='rm -rf'
-
+source ~/.zsh/rc/alias.zsh
 ##### alias エンド #####
-
 
 ##### credentials スタート #####
 source ~/.credentials.sh
