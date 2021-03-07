@@ -1,169 +1,22 @@
-##### oh-my-zsh の設定スタート #####
-export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# oh-my-zshで利用できるテーマを指定
-# ZSH_THEME="candy"
-# ZSH_THEME="fletcherm"
-# ZSH_THEME="dpoggi"
-ZSH_THEME="michelebologna"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# oh my zsh で利用するプラグインを指定
-plugins=(git zsh-syntax-highlighting zsh-completions)
-
-# すっきりしたプロンプト表示 (不要ならコメントアウト)
-PROMPT='%~ %# '
-
-# oh-my-zsh に変更を適用
-source $ZSH/oh-my-zsh.sh
-##### oh-my-zsh の設定エンド #####
-
-
-
-##### zsh の設定スタート #####
-# zsh-completionsの設定、コマンド補完機能
-autoload -U compinit && compinit -u
-
-# git のカラー表示
-git config --global color.ui auto
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# 文字コードの指定
-export LANG=ja_JP.UTF-8
-
-# 色を使用できるようにする
-autoload -Uz colors
-colors
-
-# 日本語ファイル名を表示可能にする
-setopt print_eight_bit
-
-# cdなしでディレクトリ移動
-setopt auto_cd
-
-# ビープ音の停止
-setopt no_beep
-
-# ビープ音の停止(補完時)
-setopt nolistbeep
-
-# cd <tab>で以前移動したディレクトリを表示
-setopt auto_pushd
-
-# ヒストリ (履歴) を保存、数を増やす
-# HISTFILE=~/.zsh_history
-# HISTSIZE=100000
-# SAVEHIST=100000
-
-# 同時に起動したzshの間でヒストリを共有する
-setopt share_history
-
-# 直前と同じコマンドの場合はヒストリに追加しない
-setopt hist_ignore_dups
-
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
-
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
-
-# ヒストリに保存するときに余分なスペースを削除する
-setopt hist_reduce_blanks
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+### This file is .zshrc ###
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# NPM_PACKAGES="${HOME}/.npm-packages"
+# The role is to control all zsh settings
+# .zshrc is main file for them
+# Maybe almost all written here would be source keyword
 
-##### zsh の設定エンド #####
+##### zsh settings スタート #####
 
+##### my oh-my-zsh customize #####
+source ~/.zsh/rc/oh-my-zsh.zsh
 
-##### zsh env スタート #####
-source ~/.zshenv
-##### zsh env エンド #####
+##### base #####
+source ~/.zsh/rc/base.zsh
 
-##### alias スタート #####
+##### env var #####
+source ~/.zsh/rc/env-var.zsh
+
+##### alias #####
 source ~/.zsh/rc/alias.zsh
-##### alias エンド #####
 
-##### credentials スタート #####
+##### credentials #####
 source ~/.credentials.sh
-##### credentials エンド #####
