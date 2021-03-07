@@ -155,13 +155,18 @@ setopt hist_reduce_blanks
 
 
 ### PATH環境変数の設定管理コマンドスタート ###
-# export statement for reset
-# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# This is the default PATH env var
+# PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=$PATH
 
-# export statement for customize
-# export PATH=$PATH:./node_modules/.bin:~/.npm-global/bin:/Applications/MAMP/Library/bin
-export PATH=./node_modules/.bin:$HOME/.nodebrew/current/bin:$HOME/.config/yarn/global/node_modules/.bin:~/.npm-global/bin:/Users/komatsugata/.rbenv/shims/ruby:/Applications/MAMP/Library/bin:$PATH
-# export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
+# customize and export PATH
+PATH=$PATH:./node_modules/.bin
+PATH=$PATH:$HOME/.nodebrew/current/bin
+PATH=$PATH:$HOME/.config/yarn/global/node_modules/.bin
+PATH=$PATH:$HOME/.npm-global/bin
+PATH=$PATH:$HOME/.rbenv/shims/ruby
+PATH=$PATH:/Applications/MAMP/Library/bin
+export PATH
 
 ### PATH環境変数の設定管理コマンドエンド ###
 ##### zsh の設定エンド #####
