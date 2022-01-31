@@ -34,7 +34,7 @@ alias gs='git status'
 alias gbm='git branch -m'
 alias grsh='git reset --soft HEAD^'
 alias gmv='git mv'
-alias giae='git init --allow-empty'
+alias gcae='git commit --allow-empty'
 
 ## zsh
 alias sz='source ~/.zshrc'
