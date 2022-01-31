@@ -10,11 +10,11 @@ PATH=$PATH
 
 # customize and export PATH
 PATH=$PATH:./node_modules/.bin
-PATH=$PATH:$HOME/.nodebrew/current/bin
+PATH=$HOME/.nodebrew/current/bin:$PATH
 PATH=$PATH:$HOME/.config/yarn/global/node_modules/.bin
 PATH=$PATH:$HOME/.npm-global/bin
 PATH=$PATH:$HOME/.rbenv/shims/ruby
-PATH=$PATH:/Applications/MAMP/Library/bin
+#PATH=$PATH:/Applications/MAMP/Library/bin
 export PATH
 
 ##### PATH環境変数の設定管理コマンドエンド #####
