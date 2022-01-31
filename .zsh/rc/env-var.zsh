@@ -34,3 +34,29 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 eval "$(rbenv init -)"
 ##### set up rbenv shell integration エンド #####
 
+
+##### Javaが動作するために必要なCLASSPATH環境変数の設定スタート #####
+# CLASSPATH環境変数で設定したディレクトリをjavaは参照する
+# export CLASSPATH=.:/Library/Java/Extensions/*
+#
+# Javaアプリケーションからpostgresqlへの接続を行うためのJDBCドライバのファイルがこのjarファイル
+# 今回はこのバージョンをhttps://jdbc.postgresql.org/download.htmlからダウンロードしてきたので明示しておく
+# 新しいバージョンなど異なるドライバを使う場合は適宜修正する
+export CLASSPATH=.:/Library/Java/Extensions/postgresql-42.2.19.jar
+##### Javaが動作するために必要なCLASSPATH環境変数の設定エンド #####
+
+
+##### Homebrew経由でインストールしたPostgreSQLを動作させる時に参照するデータディレクトリのための環境変数 スタート #####
+# PostgreSQLサーバーを動かすとき
+# command: postgres -D /usr/local/var/postgres
+# このデフォルトで決められているディレクトリを-Dオプションで参照するようにしなければならないが、
+# 毎度指定するのが面倒なため、PGDATA環境変数でそれを設定することができるようになっている
+# PostgreSQLは基本的にローカルにおいては練習用にHomebrew経由でインストールしたが、
+# この場合Homebrewのコマンドでもpostgresの制御、つまりサーバ立ち上げやストップ等できるコマンドが準備されている、例として
+# command: brew services start postgresql (練習であればstartよりrunの方が良さそう、理由はhelp見ればわかる)
+# このようにするとバックグラウンドモードでサーバを立ち上げられるのがメリットらしい、また
+# command: brew services
+# でbrew servicesコマンド経由で制御可能なサービス一覧がわかる。現状postgresのみ
+export PGDATA=/usr/local/var/postgres
+##### Homebrew経由でインストールしたPostgreSQLを動作させる時に参照するデータディレクトリのための環境変数 エンド #####
+
