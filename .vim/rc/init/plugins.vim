@@ -4,6 +4,9 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+" set the runtime path to include fzf to function fzf.vim plugin
+set rtp+=/usr/local/opt/fzf
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -34,6 +37,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/fzf.vim'
+"Plugin 'neoclide/coc.nvim'
+"Plugin 'w0rp/ale'
 
 " -- Add plugins you want to use here --
 
