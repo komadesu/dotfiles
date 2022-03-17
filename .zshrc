@@ -18,5 +18,8 @@ source ~/.zsh/rc/env-var.zsh
 ##### alias #####
 source ~/.zsh/rc/alias.zsh
 
+##### alias #####
+source ~/.zsh/rc/function.zsh
+
 ##### credentials #####
 source ~/.credentials.sh
