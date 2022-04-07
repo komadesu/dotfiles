@@ -38,6 +38,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-rails'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'vim-airline/vim-airline'
 "Plugin 'neoclide/coc.nvim'
 "Plugin 'w0rp/ale'
 
@@ -59,3 +61,4 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Vundle configuration https://github.com/VundleVim/Vundle.vim エンド----
+
